@@ -10,6 +10,11 @@ class EpicenterController < ApplicationController
 end
 end
 
+
+  def all_users
+    @user = User.all
+  end
+
   def show_user
 		@user = User.find(params[:id])
 
@@ -30,4 +35,22 @@ end
     current_user.save
 		  	
    end
+
+
+
+   def epi_tweet
+
+    # 1.this is say that we want a new tweet
+
+     @tweet = Tweet.new  
+
+     @tweet.message = "#{params[:tweet][:message]}"
+     @tweet.user_id = "#{params[:tweet][:user_id].to_i}"
+
+     @tweet.save
+     redirect_to root_path
+   end
+
+
+
 end

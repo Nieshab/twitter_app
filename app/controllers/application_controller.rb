@@ -13,7 +13,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :bio, :location])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :bio, :location, :following ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :bio, :location, :following, :avatar])
 
 
 	end

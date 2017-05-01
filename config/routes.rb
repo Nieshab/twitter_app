@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   get 'unfollow'  => 'epicenter#unfollow'
 
+
+  post 'epicenter/epi_tweet'
+  get "epicenter/epi_tweet"
+
+  get "tweeters" => "epicenter#all_users"
+
   resources :tweets
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -31,6 +31,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
 
+gem 'mini_magick'
+
+
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

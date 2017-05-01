@@ -8,7 +8,20 @@
 <p>
 	<strong>User:</strong>
 		<%= link_to @tweet.user.username, show_user_path(id: @tweet.user.id) %>
-</p>
+	</p>
+
+
+<!-- this is what prevents users from from posting on other people's pages -->
+
+	<% if @user.id == current_user.id %>  
+
+<div class="well">
+	<%= form_for Tweet.new, url: {actions: "epi_tweet"} do |f| %>
+		<%= f.text_field :message %>
+		<%= f.hidden_field :user_id, value: current_user.id %>
+		<%= f.submit "Create Tweet" %>
+
+		<% end %>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
 <%= link_to 'Back', tweets_path %>
